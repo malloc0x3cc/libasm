@@ -6,7 +6,7 @@
 #    By: madelwau <madelwau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 21:13:28 by madelwau          #+#    #+#              #
-#    Updated: 2026/05/06 13:30:22 by madelwau         ###   ########.fr        #
+#    Updated: 2026/10/05 21:18:37 by madelwau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,7 @@ SHELL	:= /bin/sh
 NAME	:= libasm.a
 
 AS		:= nasm
-ifeq ($(shell uname),Linux)
-	ASFLAGS	:= -f elf64
-else
-	ASFLAGS	:= -f macho64
-endif
+ASFLAGS	:= -f elf64
 CC		:= cc
 CFLAGS	:= -Wall -Wextra -Werror -I. -MMD -MP
 AR		:= ar
@@ -27,9 +23,10 @@ ARFLAGS	:= rcs
 
 SRCS	:= ft_strlen.s
 
-OBJS	:= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 OBJ_DIR	:= .obj/
-DEPS	:= $(OBJS:.o=.d)
+OBJS	:= $(addprefix $(OBJ_DIR), $(SRCS:.s=.o))
+#DEPS	:= $(OBJS:.o=.d)
+#-include $(DEPS)
 
 ifeq ($(filter bonus,$(MAKECMDGOALS)),bonus)
 	#SRCS	= 
@@ -45,9 +42,9 @@ $(NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	@printf "$(COL_Y)[DONE] $(NAME) ($(MODE))$(COL_0)\n"
 
-$(OBJ_DIR)%.o: %.c
+$(OBJ_DIR)%.o: %.s
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@ \
+	@$(AS) $(ASFLAGS) $< -o $@ \
 		&& printf "$(COL_G)[OK]$(COL_0) %-42s -> %s\n" "$<" "$@"
 
 clean:
@@ -60,8 +57,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
--include $(DEPS)
+.PHONY: all clean fclean re bonus
 
 # Colors
 COL_R   = \033[1;31m
