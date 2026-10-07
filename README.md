@@ -4,6 +4,9 @@ libasm
 ======
 Description
 -----------
+LibASM is a small library written in pure 64-bit Assembly (Intel syntax).
+The mandatory functions to recreate are `strlen`, `strcpy`, `strcmp`, `write`, `read` and `strdup`.
+
 Instructions
 ------------
 ### Example test file
@@ -19,9 +22,9 @@ int     main(int ac, char **av)
 {
     if (ac >= 2)
     {
-        printf("-- STRLEN --\nft: av[1] = %ld, av[2] = %ld\nstd: av[1] = %ld, av[2] = %ld\n",
+        printf("-- STRLEN --\nlibasm: av[1] = %ld, av[2] = %ld\nlibc: av[1] = %ld, av[2] = %ld\n",
             ft_strlen(av[1]), ft_strlen(av[2]), strlen(av[1]), strlen(av[2]));
-        printf("-- STRCMP --\nft: %d\nstd: %d\n", ft_strcmp(av[1], av[2]), strcmp(av[1], av[2]));
+        printf("-- STRCMP --\nlibasm: %d\nlibc: %d\n", ft_strcmp(av[1], av[2]), strcmp(av[1], av[2]));
     }
     return (0);
 }
