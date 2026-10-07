@@ -37,3 +37,5 @@ int     main(int ac, char **av)
 ```
 Ressources
 ----------
+- [Books] Art Of Intel x86 Assembly (No Starch Press)
+- [[YouTube] Mxy - Learn Assembly for Beginners](https://www.youtube.com/playlist?list=PL9o2C-4xGfjHl5PF-Xt-yWH2zc4wjJ3AW)
