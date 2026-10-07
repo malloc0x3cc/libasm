@@ -6,7 +6,7 @@
 #    By: madelwau <madelwau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 21:13:28 by madelwau          #+#    #+#              #
-#    Updated: 2026/10/05 21:18:37 by madelwau         ###   ########.fr        #
+#    Updated: 2026/10/07 02:10:34 by madelwau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CFLAGS	:= -Wall -Wextra -Werror -I. -MMD -MP
 AR		:= ar
 ARFLAGS	:= rcs
 
-SRCS	:= ft_strlen.s
+SRCS	:= ft_strlen.s ft_strcmp.s
 
 OBJ_DIR	:= .obj/
 OBJS	:= $(addprefix $(OBJ_DIR), $(SRCS:.s=.o))
