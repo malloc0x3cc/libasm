@@ -13,7 +13,7 @@ Instructions
 ```sh
 % make
 % gcc -Wall -Werror -Wextra -no-pie test.c -L. -lasm
-% ./a.out "Hello, World" "The quick brown fox jumps over the lazy dog."
+% ./a.out
 ```
 Ressources
 ----------
