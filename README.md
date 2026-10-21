@@ -5,7 +5,6 @@ libasm
 Description
 -----------
 LibASM is a small library written in pure 64-bit Assembly (Intel syntax). The goal of this project is to get familiar with assembly language (`x86_64`), the System V AMD64 ABI calling convention, CPU registers, stack frame alignment, and direct Linux system calls (`syscall`).
-The mandatory functions to recreate are `strlen`, `strcpy`, `strcmp`, `write`, `read` and `strdup`.
 
 ### Mandatory part
 Recreation of standard C library functions:
