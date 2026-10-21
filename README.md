@@ -16,6 +16,7 @@ Recreation of standard C library functions:
 - `ft_read` — Reads data from a file descriptor and sets `errno` on failure (`man 2 read`).
 - `ft_strdup` — Duplicates a string using heap allocation (`man 3 strdup`).
 
+<!--
 ### Bonus Part
 Utilities for base conversion and linked lists (`t_list`):
 - `ft_atoi_base` — Converts a string to an integer according to a custom base.
@@ -23,7 +24,7 @@ Utilities for base conversion and linked lists (`t_list`):
 - `ft_list_size` — Returns the total count of elements in a linked list.
 - `ft_list_sort` — Sorts a linked list using a comparison function pointer.
 - `ft_list_remove_if` — Removes all matching elements from a linked list using comparison and free function pointers.
-
+-->
 ### Technical Notes
 
 #### Calling Convention (System V AMD64 ABI)
